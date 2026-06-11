@@ -1,0 +1,38 @@
+FastAPI: Framework utilizado para criar a API e gerenciar as rotas do sistema.
+
+SQLAlchemy: Responsável pela comunicação e manipulação do banco de dados MySQL.
+
+Pydantic: Valida e organiza os dados recebidos e enviados pela API.
+
+Pydantic Settings: Carrega e gerencia variáveis de ambiente do arquivo .env.
+
+Jinja2:	Renderiza páginas HTML dinamicamente no dashboard.
+
+StaticFiles: Disponibiliza arquivos estáticos como CSS, JavaScript e imagens.
+
+PyTesseract: Realiza OCR para extrair texto de imagens e documentos.
+
+PDF2Image: Converte arquivos PDF em imagens para leitura pelo OCR.
+
+Pillow (PIL): Manipula e processa imagens antes da análise OCR.
+
+re (Regex): Identifica padrões de texto como nome, valor e vencimento.
+
+datetime: Manipula datas e calcula vencimentos e atrasos.
+
+smtplib: Realiza o envio de e-mails de cobrança via SMTP.
+
+EmailMessage: Cria e estrutura os e-mails enviados pelo sistema.
+
+mimetypes: Identifica o tipo dos arquivos anexados aos e-mails.
+
+OBS (SISTEMAS):
+Tesseract OCR
+
+Tesseract OCR é uma ferramenta de reconhecimento óptico de caracteres (OCR) utilizada para extrair textos de imagens.
+No sistema, ele é responsável por ler boletos em formato de imagem ou PDFs convertidos em imagem, transformando o conteúdo visual em texto que pode ser analisado automaticamente.
+
+Poppler
+
+Poppler é uma biblioteca especializada na manipulação de arquivos PDF.
+No sistema, ele é utilizado para converter páginas de boletos em PDF para imagens, permitindo que o Tesseract OCR realize a leitura e extração dos dados contidos no documento.

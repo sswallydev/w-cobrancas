@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>W Cobranças</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=10">
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-pattern left"></div>
+    <div class="hero-pattern right"></div>
+
+    <div class="logo-circle">W</div>
+
+    <h1>W COBRANÇAS</h1>
+
+    <div class="subtitle-row">
+        <span></span>
+        <p>Sistema de leitura de boletos e cobrança automática</p>
+        <span></span>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="card">
+        <div class="card-header">
+            <div class="icon-circle">📄</div>
+
+            <div>
+                <span>NOVA COBRANÇA</span>
+                <h2>Enviar cobrança automática</h2>
+                <p>Adicione o e-mail do cliente e selecione um ou mais boletos em PDF ou imagem.</p>
+            </div>
+        </div>
+
+        <form id="form-cobranca" class="form-grid">
+            <div class="form-group">
+                <label>E-mail do cliente</label>
+                <input type="email" name="email_cliente" required placeholder="cliente@email.com">
+            </div>
+
+            <div class="form-group">
+                <label>Boletos PDF ou IMAGEM</label>
+                <input type="file" name="arquivos" multiple required accept=".pdf,.png,.jpg,.jpeg">
+            </div>
+
+            <button type="submit" class="primary-button">
+                ✈ ENVIAR COBRANÇA
+            </button>
+        </form>
+
+        <div id="resultado"></div>
+    </section>
+
+    <section class="card">
+        <div class="history-header">
+            <div class="card-header history-title">
+                <div class="icon-circle">↺</div>
+
+                <div>
+                    <span>HISTÓRICO</span>
+                    <h2>Histórico de cobranças</h2>
+                    <p>Acompanhe cobranças enviadas, status e atualizações manuais.</p>
+                </div>
+            </div>
+
+            <button onclick="carregarHistorico()" class="outline-button">
+                ↻ Atualizar histórico
+            </button>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Cliente</th>
+                        <th>E-mail</th>
+                        <th>Boletos</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Atualizar</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
+
+                <tbody id="historico"></tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<script src="/static/js/dashboard.js?v=12"></script>
+</body>
+</html>

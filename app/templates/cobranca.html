@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Aviso de Cobrança</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f7f8; font-family: Arial, sans-serif;">
+    <div style="max-width: 620px; margin: 40px auto; background: #ffffff; border-radius: 16px; padding: 32px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);">
+
+        <h2 style="color: #3f4a4f; margin-bottom: 10px;">
+            Olá, {{ cliente_nome }}!
+        </h2>
+
+        <p style="color: #555; font-size: 16px;">
+            Identificamos uma cobrança vinculada ao seu boleto.
+        </p>
+
+        <div style="background: #e9e4dc; border-radius: 12px; padding: 20px; margin: 24px 0;">
+            <p><strong>Descrição:</strong> {{ descricao }}</p>
+            <p><strong>Valor:</strong> R$ {{ valor }}</p>
+            <p><strong>Status:</strong> {{ status }}</p>
+            <p><strong>Dias vencidos:</strong> {{ dias_vencidos }}</p>
+        </div>
+
+        {% if dias_vencidos > 0 %}
+        <p style="color: #8a3d3d; font-size: 15px;">
+            Este boleto possui atraso de {{ dias_vencidos }} dia(s). Recomendamos regularizar o pagamento.
+        </p>
+        {% else %}
+        <p style="color: #555; font-size: 15px;">
+            Este é um lembrete preventivo sobre o vencimento do boleto.
+        </p>
+        {% endif %}
+
+        <p style="color: #3f4a4f; margin-top: 30px;">
+            Atenciosamente,<br>
+            Equipe Financeira
+        </p>
+    </div>
+</body>
+</html>
